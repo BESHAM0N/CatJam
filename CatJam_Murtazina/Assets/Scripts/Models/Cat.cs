@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CatJam
 {
-    public class Cat : IEntity
+    public class Cat : IEntity, ICat
     {
         public event Action<Vector2Int> OnPositionChanged;
         public event Action OnReachedEnd;

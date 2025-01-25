@@ -106,7 +106,7 @@ namespace CatJam
 
         private void AddObstacle(Vector2Int position)
         {
-            var obstacle = new Obstacle(RankType.FirstLeave, DirectionType.Up, position, false, _ground);
+            var obstacle = new Obstacle(position, false, _ground);
             _allObstacles.Add(obstacle);
             _usedPositions.Add(position);
         }

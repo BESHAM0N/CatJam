@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace CatJam
 {
     public sealed class GameInstaller : MonoInstaller
     {
-        [SerializeField] private GameObjectsView _gameObjectsView;
+        [SerializeField] private EntitiesView _entitiesView;
         private readonly Vector2Int _groundSize = new(5, 5);
 
         public override void InstallBindings()
@@ -22,8 +23,8 @@ namespace CatJam
                 .WithArguments(Container.Resolve<Ground>());
             
             Container
-                .Bind<GameObjectsView>()
-                .FromInstance(_gameObjectsView)
+                .Bind<EntitiesView>()
+                .FromInstance(_entitiesView)
                 .AsSingle();
 
             Container

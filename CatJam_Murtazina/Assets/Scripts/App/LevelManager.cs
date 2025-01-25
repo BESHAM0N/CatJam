@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 using Zenject;
 
@@ -8,7 +7,7 @@ namespace CatJam
     public sealed class LevelManager : MonoBehaviour
     {
         private Ground _ground;
-        private GameObjectsView _gameObjectsView;
+        private EntitiesView _entitiesView;
         private EntityFactory _entityFactory;
         private int _currentCatCount;
         
@@ -16,23 +15,23 @@ namespace CatJam
         private const int MAX_CAT_VALUE = 8;
 
         [Inject]
-        public void Construct(Ground ground, EntityFactory entityFactory, GameObjectsView gameObjectsView)
+        public void Construct(Ground ground, EntityFactory entityFactory, EntitiesView entitiesView)
         {
             _ground = ground ?? throw new ArgumentNullException(nameof(ground));
             _entityFactory = entityFactory ?? throw new ArgumentNullException(nameof(entityFactory));
-            _gameObjectsView = gameObjectsView ?? throw new ArgumentNullException(nameof(gameObjectsView));
+            _entitiesView = entitiesView ?? throw new ArgumentNullException(nameof(entitiesView));
             _currentCatCount = INITIAL_CAT_VALUE;
         }
 
         private void Start()
         {
-            _gameObjectsView.Initialize();
+            _entitiesView.Initialize();
             GenerateLevel();
         }
 
         private void FixedUpdate()
         {
-            if (!_gameObjectsView.AllCatsHide()) return;
+            if (!_entitiesView.AllCatsIsHide) return;
             
             if (_currentCatCount < MAX_CAT_VALUE)
                 _currentCatCount++;
@@ -50,10 +49,10 @@ namespace CatJam
             _entityFactory.GenerateObstacles();
             _entityFactory.ClearPathsForCats();
 
-            var cats = _entityFactory.CreatedCats.ToArray();
             var obstacles = _entityFactory.AllObstacles.ToArray();
+            var cats = _entityFactory.CreatedCats.ToArray();
 
-            _gameObjectsView.UpdateObjects(obstacles, cats);
+            _entitiesView.UpdateObjects(obstacles, cats);
         }
     }
 }

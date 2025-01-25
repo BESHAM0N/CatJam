@@ -6,45 +6,51 @@ namespace CatJam
     public sealed class GameObjectCreator
     {
         public List<GameObject> Cats => _cats;
+        public Dictionary<Cat, GameObject> CatsDictionary = new ();
         
         private readonly Transform _parentTransform;
-        private readonly ObjectView _objectPrefab;
+        private readonly VisualObject _visualObjectPrefab;
         private List<GameObject> _cats = new ();
 
-        public GameObjectCreator(Transform parentTransform, ObjectView objectPrefab)
+        public GameObjectCreator(Transform parentTransform, VisualObject visualObjectPrefab)
         {
             _parentTransform = parentTransform;
-            _objectPrefab = objectPrefab;
+            _visualObjectPrefab = visualObjectPrefab;
         }
 
         public void CreateObject(Vector2Int position, Sprite icon, string name)
         {
             var scenePosition = new Vector3(position.x, position.y);
-            var view = Object.Instantiate(_objectPrefab, scenePosition, Quaternion.identity, _parentTransform);
+            var view = Object.Instantiate(_visualObjectPrefab, _parentTransform);
             view.SetSprite(icon);
-            view.name = name;
+            view.SetName(name);
+            view.SetPosition(scenePosition);
         }
 
         public void CreateCatObject(Cat cat, Sprite icon, string name)
         {
             var scenePosition = new Vector3(cat.Position.x, cat.Position.y);
-            var view = Object.Instantiate(_objectPrefab, scenePosition, Quaternion.identity, _parentTransform);
+            var view = Object.Instantiate(_visualObjectPrefab, _parentTransform);
             view.SetSprite(icon);
-            view.name = name;
+            view.SetPosition(scenePosition);
+            view.SetName(name);
+            view.SetRotation(GetRotationForDirection(cat.Direction));
+            CatsDictionary.Add(cat, view.gameObject);
             _cats.Add(view.gameObject);
-
-            view.transform.rotation = GetRotationForDirection(cat.Direction);
           
             var clickable = view.gameObject.AddComponent<ClickableObject>();
             clickable.OnClicked += cat.MoveToExit;
-           
-            var catView = view.gameObject.AddComponent<CatView>();
-            catView.Construct(cat);
+        }
+        
+        public GameObject GetCat(Cat cat)
+        {
+            return CatsDictionary[cat];
         }
         
         public void ClearCatsList()
         {
             _cats.Clear();
+            CatsDictionary.Clear();
         }
 
         private Quaternion GetRotationForDirection(DirectionType direction)
