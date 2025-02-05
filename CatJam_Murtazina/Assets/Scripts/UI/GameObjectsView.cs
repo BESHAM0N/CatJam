@@ -5,7 +5,7 @@ namespace CatJam
 {
     public sealed class GameObjectsView : MonoBehaviour
     {
-        [SerializeField] private ObjectView _objectPrefab;
+        [SerializeField] private VisualObject _objectPrefab;
         [SerializeField] private Sprite _stoneIcon;
         [SerializeField] private Sprite _catIcon;
 
