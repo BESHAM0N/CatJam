@@ -6,6 +6,8 @@ namespace CatJam
 {
     public sealed class LevelManager : MonoBehaviour
     {
+        public event Action OnLevelLoading;
+        
         private Ground _ground;
         private EntitiesView _entitiesView;
         private EntityFactory _entityFactory;
@@ -41,6 +43,7 @@ namespace CatJam
 
         private void GenerateLevel()
         {
+            OnLevelLoading?.Invoke();
             _ground.Reset();
             _entityFactory.ClearAllObjects();
 
