@@ -28,6 +28,7 @@ namespace CatJam
         private void Start()
         {
             _entitiesView.Initialize();
+            OnLevelLoading?.Invoke();
             GenerateLevel();
         }
 
@@ -43,7 +44,6 @@ namespace CatJam
 
         private void GenerateLevel()
         {
-            OnLevelLoading?.Invoke();
             _ground.Reset();
             _entityFactory.ClearAllObjects();
 

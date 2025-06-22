@@ -26,14 +26,11 @@ namespace CatJam
 
             if (!Physics.Raycast(ray, out RaycastHit hit)) return;
             if (hit.collider.gameObject != gameObject) return;
-            
-            Debug.Log("Object tapped");
             OnClicked?.Invoke();
         }
 
         private void OnMouseDown()
         {
-            Debug.Log("Object clicked with mouse");
             OnClicked?.Invoke();
         }
     }

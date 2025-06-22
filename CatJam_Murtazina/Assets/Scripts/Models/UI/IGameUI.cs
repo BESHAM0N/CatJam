@@ -3,7 +3,7 @@
     public interface IGameUI
     {
         void SetScore(string score);
-        void SetTimer(int time);
+        void SetTimer(string time);
         void GameOver();
     }
 }

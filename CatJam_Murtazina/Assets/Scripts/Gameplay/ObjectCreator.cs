@@ -27,7 +27,7 @@ namespace CatJam
             view.SetPosition(scenePosition);
         }
 
-        public void CreateCatObject(Cat cat, Sprite icon, string name)
+        public GameObject  CreateCatObject(Cat cat, Sprite icon, string name)
         {
             var scenePosition = new Vector3(cat.Position.x, cat.Position.y);
             var view = Object.Instantiate(_visualObjectPrefab, _parentTransform);
@@ -37,9 +37,7 @@ namespace CatJam
             view.SetRotation(GetRotationForDirection(cat.Direction));
             CatsDictionary.Add(cat, view.gameObject);
             _cats.Add(view.gameObject);
-          
-            var clickable = view.gameObject.AddComponent<ClickableObject>();
-            clickable.OnClicked += cat.MoveToExit;
+            return view.gameObject;
         }
         
         public GameObject GetCat(Cat cat)

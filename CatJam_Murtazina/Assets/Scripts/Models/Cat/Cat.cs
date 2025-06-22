@@ -7,7 +7,8 @@ namespace CatJam
     public class Cat : IEntity, ICat
     {
         public event Action<Vector2Int> OnPositionChanged;
-        public event Action OnReachedEnd;
+        public event Action OnExit;
+        public event Action OnDontExit;
         
         public RankType Rank { get; set; }
         public DirectionType Direction { get; set;  }
@@ -32,10 +33,12 @@ namespace CatJam
                 TryMoveToPath(GetOppositeDirection(Direction), out exitPosition))
             {
                 ExitMap(exitPosition);
-                return;
+                OnExit?.Invoke();
             }
-
-            Debug.Log($"Cat {Rank} is unable to exit the map.");
+            else
+            {
+                OnDontExit?.Invoke();
+            }
         }
 
         private bool TryMoveToPath(DirectionType direction, out Vector2Int exitPosition)
@@ -78,8 +81,6 @@ namespace CatJam
             Position = exitPosition;
             OnPositionChanged?.Invoke(Position);
             _ground.RemoveObject(this);
-            Debug.Log($"Cat exited the map through {exitPosition}.");
-            OnReachedEnd?.Invoke();
         }
 
         private static DirectionType GetOppositeDirection(DirectionType direction) => direction switch

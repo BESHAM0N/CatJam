@@ -4,9 +4,9 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public event Action OnTimeUp;
-    public event Action<int> OnTimeUpdated;
+    public event Action<float> OnTimeUpdated;
 
-    private int _timeLimitInSeconds = 15;
+    private int _timeLimitInSeconds = 8;
     private float _remainingTime;
     private bool _isTimerRunning;
 
@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
 
         _remainingTime -= Time.deltaTime;
 
-        OnTimeUpdated?.Invoke(Mathf.CeilToInt(_remainingTime));
+        OnTimeUpdated?.Invoke(_remainingTime);
 
         if (_remainingTime <= 0)
         {
@@ -40,5 +40,17 @@ public class Timer : MonoBehaviour
     public void StopTimer()
     {
         _isTimerRunning = false;
+    }
+    
+    public void AddTime(float seconds)
+    {
+        _remainingTime = Mathf.Clamp(_remainingTime + seconds, 0f, _timeLimitInSeconds);
+        OnTimeUpdated?.Invoke(_remainingTime);
+
+        if (_remainingTime <= 0f)
+        {
+            _isTimerRunning = false;
+            OnTimeUp?.Invoke();
+        }
     }
 }

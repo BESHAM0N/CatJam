@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Linq;
 using UnityEngine;
 using Zenject;
@@ -11,6 +10,7 @@ namespace CatJam
     {
         public event Action OnCatHide; 
         public bool AllCatsIsHide => HideAllCats();
+        public event Action<Cat, ClickableObject> OnCatViewCreated;
         
         [SerializeField] private VisualObject _visualObjectPrefab;
         [SerializeField] private Sprite _obstacleIcon;
@@ -51,11 +51,17 @@ namespace CatJam
             }
         }
         
-        private void DisplayObjects(Cat[] cats, Sprite icon, System.Func<Cat, string> nameFunc)
+        private void DisplayObjects(Cat[] cats, Sprite icon, Func<Cat, string> nameFunc)
         {
             foreach (var cat in cats)
             {
-                _creator.CreateCatObject(cat, icon, nameFunc(cat));
+                var go = _creator.CreateCatObject(cat, icon, nameFunc(cat));
+                
+                var clickable = go.GetComponent<ClickableObject>() ?? go.AddComponent<ClickableObject>();
+                
+                clickable.OnClicked += cat.MoveToExit;
+                
+                OnCatViewCreated?.Invoke(cat, clickable);
             }
         }
         
