@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,7 +32,6 @@ namespace CatJam
         {
             if (_objects.ContainsKey(target) || !IsWithinBounds(position) || _cells[position.x, position.y] != null)
             {
-                Debug.Log($"AddObject failed: Invalid target or position {position}.");
                 return;
             }
 

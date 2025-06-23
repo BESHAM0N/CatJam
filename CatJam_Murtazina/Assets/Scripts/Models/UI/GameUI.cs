@@ -17,7 +17,7 @@ namespace CatJam
             StartGame();
         }
 
-        public void StartGame()
+        private void StartGame()
         {
             _gameOverScreen.SetActive(false);
             _world.SetActive(true);
@@ -29,6 +29,11 @@ namespace CatJam
         {
             _score.text = $"Score: {score}";
         }
+        
+        public void SetTimer(string  text)
+        {
+            _timerText.text = text;
+        }
 
         public void GameOver()
         {
@@ -37,11 +42,6 @@ namespace CatJam
             _score.gameObject.SetActive(false);
             _timerText.gameObject.SetActive(false);
             SetGameOverScoreText();
-        }
-
-        public void SetTimer(string  text)
-        {
-            _timerText.text = text;
         }
 
         private void SetGameOverScoreText()

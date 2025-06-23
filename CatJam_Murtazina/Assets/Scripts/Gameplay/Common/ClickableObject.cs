@@ -1,35 +1,14 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace CatJam
 {
-    public class ClickableObject : MonoBehaviour
+    public class ClickableObject : MonoBehaviour, IPointerClickHandler
     {
         public event Action OnClicked;
-
-        private void Update()
-        {
-            if (Input.touchCount > 0)
-            {
-                var touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Began)
-                {
-                    HandleTap(touch.position);
-                }
-            }
-        }
-
-        private void HandleTap(Vector2 touchPosition)
-        {
-            var ray = Camera.main.ScreenPointToRay(touchPosition);
-
-            if (!Physics.Raycast(ray, out RaycastHit hit)) return;
-            if (hit.collider.gameObject != gameObject) return;
-            OnClicked?.Invoke();
-        }
-
-        private void OnMouseDown()
+       
+        public void OnPointerClick(PointerEventData eventData)
         {
             OnClicked?.Invoke();
         }

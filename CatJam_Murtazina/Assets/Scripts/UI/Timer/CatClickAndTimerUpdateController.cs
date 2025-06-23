@@ -26,8 +26,8 @@ namespace CatJam
 
         private void HandleCatView(Cat model, ClickableObject clickable)
         {
-            model.OnExit += () => _timer.AddTime(2f);
-            model.OnDontExit += () => _timer.AddTime(-5f);
+            model.OnExit += () => _timer.AddTime(1f);
+            model.OnDontExit += () => _timer.AddTime(-3.5f);
         }
     }
 }

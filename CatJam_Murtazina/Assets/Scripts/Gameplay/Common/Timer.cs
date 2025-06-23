@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
     public event Action OnTimeUp;
     public event Action<float> OnTimeUpdated;
 
-    private int _timeLimitInSeconds = 8;
+    private int _timeLimitInSeconds = 5;
     private float _remainingTime;
     private bool _isTimerRunning;
 
