@@ -42,6 +42,11 @@ public class Timer : MonoBehaviour
         _isTimerRunning = false;
     }
     
+    public void ResumeTimer()
+    {
+        _isTimerRunning = true;
+    }
+    
     public void AddTime(float seconds)
     {
         _remainingTime = Mathf.Clamp(_remainingTime + seconds, 0f, _timeLimitInSeconds);

@@ -7,7 +7,6 @@ namespace CatJam
     public sealed class GameInstaller : MonoInstaller
     {
         [SerializeField] private EntitiesView _entitiesView;
-        //[SerializeField] private Timer _timer;
         private readonly Vector2Int _groundSize = new(5, 5);
 
         public override void InstallBindings()

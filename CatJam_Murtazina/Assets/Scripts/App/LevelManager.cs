@@ -1,4 +1,5 @@
 ﻿using System;
+using CatJam.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -12,16 +13,18 @@ namespace CatJam
         private EntitiesView _entitiesView;
         private EntityFactory _entityFactory;
         private int _currentCatCount;
+        private ISoundService _soundService;
         
         private const int INITIAL_CAT_VALUE = 3;
         private const int MAX_CAT_VALUE = 8;
 
         [Inject]
-        public void Construct(Ground ground, EntityFactory entityFactory, EntitiesView entitiesView)
+        public void Construct(Ground ground, EntityFactory entityFactory, EntitiesView entitiesView, ISoundService soundService)
         {
             _ground = ground ?? throw new ArgumentNullException(nameof(ground));
             _entityFactory = entityFactory ?? throw new ArgumentNullException(nameof(entityFactory));
             _entitiesView = entitiesView ?? throw new ArgumentNullException(nameof(entitiesView));
+            _soundService = soundService ?? throw new ArgumentNullException(nameof(soundService));
             _currentCatCount = INITIAL_CAT_VALUE;
         }
 
@@ -30,6 +33,7 @@ namespace CatJam
             _entitiesView.Initialize();
             OnLevelLoading?.Invoke();
             GenerateLevel();
+            _soundService.PlaySound(SoundType.BackgroundMusic);
         }
 
         private void FixedUpdate()
