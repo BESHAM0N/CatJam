@@ -5,8 +5,8 @@ namespace CatJam
 {
     public sealed class CatClickAndTimerUpdateController : IInitializable, IDisposable
     {
-        readonly EntitiesView _view;
-        readonly Timer _timer;
+        private readonly EntitiesView _view;
+        private readonly Timer _timer;
 
         public CatClickAndTimerUpdateController(EntitiesView view, Timer timer)
         {

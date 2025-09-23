@@ -1,4 +1,4 @@
-﻿namespace CatJam.Sound
+﻿namespace CatJam
 {
     public interface ISoundService
     {

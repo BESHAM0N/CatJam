@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using CatJam.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -15,7 +14,6 @@ namespace CatJam
         [SerializeField] private AudioClip buttonClick;
         [SerializeField] private AudioClip catClickTrue;
         [SerializeField] private AudioClip catClickFalse;
-        [SerializeField] private AudioClip victory;
         [SerializeField] private AudioClip defeat;
 
         public override void InstallBindings()
@@ -26,7 +24,6 @@ namespace CatJam
                 { SoundType.ButtonClick, buttonClick },
                 { SoundType.CatClickTrue, catClickTrue },
                 { SoundType.CatClickFalse, catClickFalse },
-                { SoundType.Victory, victory },
                 { SoundType.Defeat, defeat },
             };
 
@@ -34,6 +31,10 @@ namespace CatJam
                 .To<SoundService>()
                 .AsSingle()
                 .WithArguments(sfxSource, musicSource, clips);
+            
+            Container.BindInterfacesAndSelfTo<StartLevelSoundObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<CatClickAndPlaySoundObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<PauseMenuClickObserver>().AsSingle().NonLazy();
         }
     }
 }

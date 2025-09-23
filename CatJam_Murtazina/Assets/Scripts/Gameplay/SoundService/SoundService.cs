@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace CatJam.Sound
+namespace CatJam
 {
     public sealed class SoundService : ISoundService
     {
@@ -23,7 +23,7 @@ namespace CatJam.Sound
         public void PlaySound(SoundType type)
         {
             if (!IsSoundEnabled || !_clips.TryGetValue(type, out var clip)) return;
-
+            
             if (type == SoundType.BackgroundMusic)
             {
                 if (_musicSource.clip != clip)

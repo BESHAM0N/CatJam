@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using CatJam.Sound;
 using Models.PauseMenuModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +6,7 @@ using Zenject;
 
 namespace CatJam.PauseMenu
 {
-    public class PauseMenuController : MonoBehaviour
+    public class PauseMenuController
     {
         [Inject] private ISoundService _soundService;
         [Inject] private Timer _timer;
@@ -40,7 +39,7 @@ namespace CatJam.PauseMenu
             _view.Show(false);
             _model.Resume();
             Time.timeScale = 1f;
-            StartCoroutine(ResumeAfterDelay());
+            //StartCoroutine(ResumeAfterDelay());
         }
 
         private IEnumerator ResumeAfterDelay()

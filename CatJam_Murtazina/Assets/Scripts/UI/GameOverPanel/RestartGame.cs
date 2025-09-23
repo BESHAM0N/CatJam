@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace CatJam.GameOverPanel
 {
-    public class RestartObserver : MonoBehaviour
+    public class RestartGame : MonoBehaviour
     {
         private Button _restartButton;
         private Tween _pulseTween;

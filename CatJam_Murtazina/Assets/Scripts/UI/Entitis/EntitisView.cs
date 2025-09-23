@@ -65,7 +65,7 @@ namespace CatJam
             }
         }
         
-        public void MoveCat(Cat cat, Vector2Int targetPosition)
+        private void MoveCat(Cat cat, Vector2Int targetPosition)
         {
             var target = new Vector3(targetPosition.x, targetPosition.y, 0);
             var catObject = _creator.GetCat(cat);
@@ -88,8 +88,8 @@ namespace CatJam
             catObject.transform.DOKill();
           
             catObject.transform.DOScale(Vector3.zero, HIDE_DURATION)
-                .SetEase(Ease.InBack) // Анимация с эффектом "отскока"
-                .OnComplete(() => catObject.SetActive(false)); // После завершения деактивировать объект
+                .SetEase(Ease.InBack)
+                .OnComplete(() => catObject.SetActive(false));
             
             OnCatHide.Invoke();
         }
