@@ -1,3 +1,4 @@
+using CatJam.PauseMenu;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
@@ -31,7 +32,7 @@ namespace CatJam
                 .Bind<LevelManager>()
                 .FromComponentInHierarchy()
                 .AsSingle()
-                .NonLazy();            
+                .NonLazy();    
         }
     }
 }

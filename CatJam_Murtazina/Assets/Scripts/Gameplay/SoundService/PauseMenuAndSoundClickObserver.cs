@@ -4,11 +4,17 @@ using Zenject;
 
 namespace CatJam
 {
-    public sealed class PauseMenuClickObserver : IInitializable, IDisposable
+    public sealed class PauseMenuAndSoundClickObserver : IInitializable, IDisposable
     {
         private readonly ISoundService _soundService;
         private readonly PauseMenuView _view;
-        
+
+        public PauseMenuAndSoundClickObserver(ISoundService soundService, PauseMenuView view)
+        {
+            _soundService = soundService;
+            _view = view;
+        }
+
         public void Initialize()
         {
             _view.OnExitClicked += SoundHandler;

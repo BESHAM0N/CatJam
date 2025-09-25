@@ -1,20 +1,36 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CatJam
 {
     public class GameUI : MonoBehaviour, IGameUI
     {
+        public event Action OnPauseClicked;
+        
         [SerializeField] private GameObject _gameOverScreen;
         [SerializeField] private GameObject _world;
         
         [SerializeField] private TMP_Text _score;
         [SerializeField] private TMP_Text _timerText;
         [SerializeField] private TMP_Text _gameOverScoreText;
+        
+        [SerializeField] private Button _pauseButton;
 
         private void Awake()
         {
             StartGame();
+        }
+
+        private void OnEnable()
+        {
+            _pauseButton.onClick.AddListener(() => OnPauseClicked?.Invoke());
+        }
+
+        private void OnDisable()
+        {
+            _pauseButton.onClick.RemoveAllListeners();
         }
 
         private void StartGame()

@@ -39,7 +39,9 @@ namespace CatJam.PauseMenu
         {
             if (_viewAnimator == null)
              return;
-
+                
+            Debug.Log("Show");
+            
             if (active)
                 _viewAnimator.Show(_canvasGroup, _panel, _fadeDuration);
             else

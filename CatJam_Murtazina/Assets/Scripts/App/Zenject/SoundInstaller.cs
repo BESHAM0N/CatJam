@@ -34,7 +34,7 @@ namespace CatJam
             
             Container.BindInterfacesAndSelfTo<StartLevelSoundObserver>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<CatClickAndPlaySoundObserver>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<PauseMenuClickObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<PauseMenuAndSoundClickObserver>().AsSingle().NonLazy();
         }
     }
 }

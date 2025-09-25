@@ -323,8 +323,9 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 259315986}
-  - {fileID: 259315991}
   - {fileID: 259315992}
+  - {fileID: 259315991}
+  - {fileID: 259315993}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -421,12 +422,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259315985}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 420883b4a72f4a7c9bf4d69a98e5b288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 0}
+  _view: {fileID: 561209366}
 --- !u!1 &337121495
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +839,7 @@ GameObject:
   - component: {fileID: 561209366}
   - component: {fileID: 561209365}
   m_Layer: 0
-  m_Name: StopPanel
+  m_Name: PausePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2671,11 +2672,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1610766317}
+  - component: {fileID: 1610766319}
   - component: {fileID: 1610766316}
   - component: {fileID: 1610766315}
   - component: {fileID: 1610766314}
   - component: {fileID: 1610766318}
-  - component: {fileID: 1610766319}
   m_Layer: 0
   m_Name: '[UI]'
   m_TagString: Untagged

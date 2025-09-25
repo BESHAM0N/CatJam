@@ -43,14 +43,13 @@ namespace CatJam.PauseMenu
         public void PauseGame()
         {
             if (_model.IsPaused) return;
+            _view.Show(true);
             _model.Pause();
             Time.timeScale = 0f;
-            _view.Show(true);
         }
 
         private void HandleResume()
         {
-            
             if (!_model.IsPaused) return;
             _view.Show(false);
             _model.Resume();

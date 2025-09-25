@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CatJam.PauseMenu;
+using UnityEngine;
 using Zenject;
 
 namespace CatJam
@@ -10,11 +11,11 @@ namespace CatJam
         
         public override void InstallBindings()
         {
-            Container.Bind<IViewAnimator>().To<FadeViewAnimator>().AsSingle();
             Container.Bind<IGameUI>().FromComponentInHierarchy().AsSingle().NonLazy();
             Container.BindInterfacesTo<EntitisPresenter>().AsSingle().NonLazy();
             ScoreInstaller.Install(Container, _entitiesView);
             TimerInstaller.Install(Container, _timer);
+            Container.BindInterfacesAndSelfTo<PauseGameObserver>().AsSingle().NonLazy();
         }
     }
 }
