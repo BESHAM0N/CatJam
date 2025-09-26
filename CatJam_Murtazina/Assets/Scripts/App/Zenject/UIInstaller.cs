@@ -8,6 +8,7 @@ namespace CatJam
     {
         [SerializeField] private EntitiesView _entitiesView;
         [SerializeField] private Timer _timer;
+        [SerializeField] private PauseMenuView _view;
         
         public override void InstallBindings()
         {
@@ -15,6 +16,7 @@ namespace CatJam
             Container.BindInterfacesTo<EntitisPresenter>().AsSingle().NonLazy();
             ScoreInstaller.Install(Container, _entitiesView);
             TimerInstaller.Install(Container, _timer);
+            PauseMenuInstaller.Install(Container, _view);
             Container.BindInterfacesAndSelfTo<PauseGameObserver>().AsSingle().NonLazy();
         }
     }

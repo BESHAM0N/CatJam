@@ -1,13 +1,12 @@
 ﻿using CatJam.PauseMenu;
 using Models.PauseMenuModel;
-using UnityEngine;
 using Zenject;
 
 namespace CatJam
 {
-    public class PauseMenuInstaller : MonoInstaller
+    public class PauseMenuInstaller : Installer<PauseMenuView, PauseMenuInstaller>
     {
-        [SerializeField] private PauseMenuView _view;
+        [Inject] private PauseMenuView _view;
 
         public override void InstallBindings()
         {
