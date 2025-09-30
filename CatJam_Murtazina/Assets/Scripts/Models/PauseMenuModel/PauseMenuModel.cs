@@ -7,7 +7,7 @@ namespace Models.PauseMenuModel
         public event Action<bool> OnSoundStateChanged;
 
         public bool IsSoundEnabled { get; private set; } = true;
-        public bool IsPaused { get; private set; } = false;
+        public bool IsPaused { get; private set; }
 
         public void ToggleSound()
         {

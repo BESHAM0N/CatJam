@@ -27,10 +27,10 @@ namespace CatJam
             if (type == SoundType.BackgroundMusic)
             {
                 if (_musicSource.clip != clip)
-                {
                     _musicSource.clip = clip;
+
+                if (!_musicSource.isPlaying)
                     _musicSource.Play();
-                }
             }
             else
             {

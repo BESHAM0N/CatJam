@@ -58,6 +58,7 @@ namespace CatJam.PauseMenu
 
         private void HandleSoundToggle()
         {
+            Debug.Log("Sound Toggle");
             _model.ToggleSound();
             _soundService.ToggleSound(_model.IsSoundEnabled);
         }

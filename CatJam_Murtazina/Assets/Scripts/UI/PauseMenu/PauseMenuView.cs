@@ -10,6 +10,7 @@ namespace CatJam.PauseMenu
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private float _fadeDuration = 0.3f;
         [SerializeField] private GameObject _panel;
+        [SerializeField] private GameObject _world;
         [SerializeField] private Button _resumeButton;
         [SerializeField] private Button _soundToggleButton;
         [SerializeField] private Button _exitButton;
@@ -37,13 +38,24 @@ namespace CatJam.PauseMenu
 
         public void Show(bool active)
         {
-            if (_viewAnimator == null)
-                return;
-            
+            // if (_viewAnimator == null)
+            //     return;
+
             if (active)
-                _viewAnimator.Show(_canvasGroup, _panel, _fadeDuration);
+            {
+               gameObject.SetActive(true);
+               _world.SetActive(false);
+            }
             else
-                _viewAnimator.Hide(_canvasGroup, _panel, _fadeDuration);
+            {
+                gameObject.SetActive(false);
+                _world.SetActive(true);
+            }
+            
+            // if (active)
+            //     _viewAnimator.Show(_canvasGroup, _panel, _fadeDuration);
+            // else
+            //     _viewAnimator.Hide(_canvasGroup, _panel, _fadeDuration);
         }
 
         public void UpdateSoundIcon(bool isSoundOn)

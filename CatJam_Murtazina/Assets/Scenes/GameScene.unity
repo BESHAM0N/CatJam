@@ -880,6 +880,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 561209365}
   _fadeDuration: 0.3
   _panel: {fileID: 1174410001}
+  _world: {fileID: 1568413558}
   _resumeButton: {fileID: 1527041409}
   _soundToggleButton: {fileID: 1459343149}
   _exitButton: {fileID: 728338368}
@@ -2516,7 +2517,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 988cf4ede91c2f14caa84a4ac58436bd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.15
   m_Pitch: 1
