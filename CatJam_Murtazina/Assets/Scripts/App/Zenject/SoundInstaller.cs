@@ -6,8 +6,8 @@ namespace CatJam
 {
     public class SoundInstaller : MonoInstaller
     {
-        [SerializeField] private AudioSource sfxSource;
         [SerializeField] private AudioSource musicSource;
+        [SerializeField] private AudioSource sfxSource;
 
         [Header("Audio Clips")]
         [SerializeField] private AudioClip backgroundMusic;
@@ -27,14 +27,10 @@ namespace CatJam
                 { SoundType.Defeat, defeat },
             };
 
-            Container.Bind<ISoundService>()
-                .To<SoundService>()
-                .AsSingle()
-                .WithArguments(sfxSource, musicSource, clips);
-            
+            Container.Bind<ISoundService>().To<SoundService>().AsSingle().WithArguments(sfxSource, musicSource, clips);
             Container.BindInterfacesAndSelfTo<StartLevelSoundObserver>().AsSingle().NonLazy();
-            //Container.BindInterfacesAndSelfTo<CatClickAndPlaySoundObserver>().AsSingle().NonLazy();
-            //Container.BindInterfacesAndSelfTo<PauseMenuAndSoundClickObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<CatClickAndPlaySoundObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<PauseMenuAndSoundClickObserver>().AsSingle().NonLazy();
         }
     }
 }
