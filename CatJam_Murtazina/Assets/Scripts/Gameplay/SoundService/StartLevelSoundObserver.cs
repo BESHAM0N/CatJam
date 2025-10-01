@@ -17,6 +17,7 @@ namespace CatJam
         public void Initialize()
         {
             _levelManager.OnLevelLoading += LoadingHandler;
+            LoadingHandler();
         }
 
         public void Dispose()

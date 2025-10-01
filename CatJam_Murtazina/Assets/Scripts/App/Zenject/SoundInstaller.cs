@@ -33,8 +33,8 @@ namespace CatJam
                 .WithArguments(sfxSource, musicSource, clips);
             
             Container.BindInterfacesAndSelfTo<StartLevelSoundObserver>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<CatClickAndPlaySoundObserver>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<PauseMenuAndSoundClickObserver>().AsSingle().NonLazy();
+            //Container.BindInterfacesAndSelfTo<CatClickAndPlaySoundObserver>().AsSingle().NonLazy();
+            //Container.BindInterfacesAndSelfTo<PauseMenuAndSoundClickObserver>().AsSingle().NonLazy();
         }
     }
 }
