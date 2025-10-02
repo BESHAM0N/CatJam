@@ -3,12 +3,12 @@ using Zenject;
 
 namespace CatJam
 {
-    public class CatClickAndPlaySoundObserver : IInitializable, IDisposable
+    public class SoundAndCatClickObserver : IInitializable, IDisposable
     {
         private readonly ISoundService _soundService;
         private readonly EntitiesView _view;
 
-        public CatClickAndPlaySoundObserver(EntitiesView view, ISoundService soundService)
+        public SoundAndCatClickObserver(EntitiesView view, ISoundService soundService)
         {
             _view = view;
             _soundService = soundService;

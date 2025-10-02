@@ -3,12 +3,12 @@ using Zenject;
 
 namespace CatJam
 {
-    public sealed class StartLevelSoundObserver  : IInitializable, IDisposable
+    public sealed class SoundStartLevelObserver  : IInitializable, IDisposable
     {
         private readonly ISoundService _soundService;
         private readonly LevelManager _levelManager;
      
-        public StartLevelSoundObserver(LevelManager levelManager, ISoundService soundService)
+        public SoundStartLevelObserver(LevelManager levelManager, ISoundService soundService)
         {
             _levelManager = levelManager;
             _soundService = soundService;

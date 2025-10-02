@@ -28,9 +28,9 @@ namespace CatJam
             };
 
             Container.Bind<ISoundService>().To<SoundService>().AsSingle().WithArguments(sfxSource, musicSource, clips);
-            Container.BindInterfacesAndSelfTo<StartLevelSoundObserver>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<CatClickAndPlaySoundObserver>().AsSingle().NonLazy();
-            Container.BindInterfacesAndSelfTo<PauseMenuAndSoundClickObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<SoundStartLevelObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<SoundAndCatClickObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<SoundAndPauseMenuClickObserver>().AsSingle().NonLazy();
         }
     }
 }
