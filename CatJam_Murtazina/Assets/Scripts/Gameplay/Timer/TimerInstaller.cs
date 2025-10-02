@@ -9,7 +9,7 @@ namespace CatJam
         public override void InstallBindings()
         {
             Container.Bind<Timer>().FromInstance(_timer).AsSingle().NonLazy();
-            Container.BindInterfacesTo<CatClickAndTimerUpdateController>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<TimerUpdateAndCatClickController>().AsSingle().NonLazy();
             Container.BindInterfacesTo<TimerViewController>().AsSingle().NonLazy();
             Container.BindInterfacesTo<TimerUpdateObserver>().AsSingle().NonLazy();
         }

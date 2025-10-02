@@ -3,12 +3,12 @@ using Zenject;
 
 namespace CatJam
 {
-    public sealed class CatClickAndTimerUpdateController : IInitializable, IDisposable
+    public sealed class TimerUpdateAndCatClickController : IInitializable, IDisposable
     {
         private readonly EntitiesView _view;
         private readonly Timer _timer;
 
-        public CatClickAndTimerUpdateController(EntitiesView view, Timer timer)
+        public TimerUpdateAndCatClickController(EntitiesView view, Timer timer)
         {
             _view = view;
             _timer = timer;
