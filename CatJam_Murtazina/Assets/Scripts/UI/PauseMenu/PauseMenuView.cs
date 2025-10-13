@@ -48,6 +48,7 @@ namespace CatJam.PauseMenu
             }
             else
             {
+                Debug.Log("!active");
                 gameObject.SetActive(false);
                 _world.SetActive(true);
             }
