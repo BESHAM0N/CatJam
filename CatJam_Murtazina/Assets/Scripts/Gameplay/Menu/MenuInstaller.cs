@@ -7,7 +7,7 @@ namespace CatJam.Menu
     public class MenuInstaller : MonoInstaller
     {
         [Header("Target scene")] 
-        [SerializeField] private string _gameSceneName = "GameScene"; // задаёшь в инспекторе
+        [SerializeField] private string _gameSceneName = "GameScene";
 
         public override void InstallBindings()
         {
