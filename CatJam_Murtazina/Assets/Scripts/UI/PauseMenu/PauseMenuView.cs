@@ -40,12 +40,16 @@ namespace CatJam.PauseMenu
         
         private void OnEnable()
         {
-            _pulseTween = _resumeButton.transform
-                .DOScale(1.05f, 0.7f)
-                .SetEase(Ease.InOutSine)
-                .SetLoops(-1, LoopType.Yoyo)
-                .Pause();
+            EnsurePulseTween();
+            _pulseTween.Pause();
         }
+        
+        private void OnDisable()
+        {
+            _pulseTween?.Pause();
+            if (_resumeButton) _resumeButton.transform.localScale = Vector3.one;
+        }
+
 
         public void Show(bool active)
         {
@@ -55,19 +59,40 @@ namespace CatJam.PauseMenu
             {
                 gameObject.SetActive(true);
                 _world.SetActive(false);
-                _pulseTween?.Play(); 
+
+                EnsurePulseTween();
+                _pulseTween.Restart();
             }
             else
             {
-                gameObject.SetActive(false);
-                _world.SetActive(true);
                 _pulseTween?.Pause();
+                _resumeButton.transform.localScale = Vector3.one;
+
+                _world.SetActive(true);
+                gameObject.SetActive(false);
             }
             
             // if (active)
             //     _viewAnimator.Show(_canvasGroup, _panel, _fadeDuration);
             // else
             //     _viewAnimator.Hide(_canvasGroup, _panel, _fadeDuration);
+        }
+        
+        private void EnsurePulseTween()
+        {
+            if (_pulseTween != null && _pulseTween.IsActive()) return;
+            
+            _pulseTween?.Kill();
+           
+            _resumeButton.transform.localScale = Vector3.one;
+
+            _pulseTween = _resumeButton.transform
+                .DOScale(1.05f, 0.7f)
+                .SetEase(Ease.InOutSine)
+                .SetLoops(-1, LoopType.Yoyo)
+                .SetAutoKill(false)                
+                .SetUpdate(true)                   
+                .SetLink(_resumeButton.gameObject); 
         }
         
         private void OnDestroy()
