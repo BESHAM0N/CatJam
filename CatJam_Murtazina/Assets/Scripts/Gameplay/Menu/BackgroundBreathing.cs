@@ -16,7 +16,7 @@
             _zoomTween = transform
                 .DOScale(zoomInScale, duration / 2f)
                 .SetEase(easeType)
-                .SetLoops(-1, LoopType.Yoyo); // бесконечный цикл туда-сюда
+                .SetLoops(-1, LoopType.Yoyo);
         }
 
         private void OnDestroy()
