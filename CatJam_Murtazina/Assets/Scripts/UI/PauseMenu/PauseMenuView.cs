@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using System;
 using DG.Tweening;
 
-namespace CatJam.PauseMenu
+namespace CatJam
 {
     public class PauseMenuView : MonoBehaviour
     {

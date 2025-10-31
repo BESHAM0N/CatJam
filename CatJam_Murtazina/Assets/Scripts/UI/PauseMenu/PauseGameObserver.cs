@@ -1,7 +1,7 @@
 ﻿using System;
 using Zenject;
 
-namespace CatJam.PauseMenu
+namespace CatJam
 {
     public class PauseGameObserver : IInitializable, IDisposable
     {

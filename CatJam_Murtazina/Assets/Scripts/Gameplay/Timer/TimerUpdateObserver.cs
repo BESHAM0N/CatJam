@@ -6,9 +6,9 @@ namespace CatJam
     public class TimerUpdateObserver : IInitializable, IDisposable
     {
         private LevelManager _levelManager;
-        private Timer _timer;
+        private ITimer _timer;
 
-        public TimerUpdateObserver(LevelManager levelManager, Timer timer)
+        public TimerUpdateObserver(LevelManager levelManager, ITimer timer)
         {
             _levelManager = levelManager;
             _timer = timer;
@@ -26,7 +26,7 @@ namespace CatJam
 
         private void UpdateTimers()
         {
-            _timer.RestartTimer();
+            _timer.Reset(6);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using CatJam.PauseMenu;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
 namespace CatJam
@@ -7,7 +6,7 @@ namespace CatJam
     public sealed class UIInstaller : MonoInstaller
     {
         [SerializeField] private EntitiesView _entitiesView;
-        [SerializeField] private Timer _timer;
+        [SerializeField] private TimerView _timer;
         [SerializeField] private PauseMenuView _view;
         
         public override void InstallBindings()

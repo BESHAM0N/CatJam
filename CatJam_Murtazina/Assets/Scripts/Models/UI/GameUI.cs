@@ -13,7 +13,7 @@ namespace CatJam
         [SerializeField] private GameObject _world;
         
         [SerializeField] private TMP_Text _score;
-        [SerializeField] private TMP_Text _timerText;
+        [SerializeField] private TimerView _timerText;
         [SerializeField] private TMP_Text _gameOverScoreText;
         
         [SerializeField] private Button _pauseButton;
@@ -46,9 +46,9 @@ namespace CatJam
             _score.text = $"Score: {score}";
         }
         
-        public void SetTimer(string  text)
+        public void SetTimer(string text)
         {
-            _timerText.text = text;
+            
         }
 
         public void GameOver()

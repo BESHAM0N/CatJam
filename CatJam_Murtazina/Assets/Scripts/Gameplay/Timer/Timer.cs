@@ -1,22 +1,23 @@
 using System;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class Timer
 {
     public event Action OnTimeUp;
     public event Action<float> OnTimeUpdated;
+    public event Action OnColorAnsSizeChanged;
 
     private int _timeLimitInSeconds = 5;
     private float _remainingTime;
     private bool _isTimerRunning;
 
-    private void Start()
+    public void StartTimer()
     {
         _remainingTime = _timeLimitInSeconds;
         _isTimerRunning = true;
     }
 
-    private void Update()
+    public void OnUpdateTimer()
     {
         if (!_isTimerRunning) return;
 
@@ -28,6 +29,16 @@ public class Timer : MonoBehaviour
         {
             _isTimerRunning = false;
             OnTimeUp?.Invoke();
+        }
+
+        CheckTimer();
+    }
+
+    private void CheckTimer()
+    {
+        if (_remainingTime <= 3)
+        {
+            OnColorAnsSizeChanged?.Invoke();
         }
     }
 
@@ -41,12 +52,12 @@ public class Timer : MonoBehaviour
     {
         _isTimerRunning = false;
     }
-    
+
     public void ResumeTimer()
     {
         _isTimerRunning = true;
     }
-    
+
     public void AddTime(float seconds)
     {
         _remainingTime = Mathf.Clamp(_remainingTime + seconds, 0f, _timeLimitInSeconds);

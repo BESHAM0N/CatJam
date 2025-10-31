@@ -1,5 +1,4 @@
-﻿using CatJam.PauseMenu;
-using Models.PauseMenuModel;
+﻿using Models.PauseMenuModel;
 using Zenject;
 
 namespace CatJam

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace CatJam.PauseMenu
+namespace CatJam
 {
     public class PauseMenuController : IInitializable, IDisposable
     {

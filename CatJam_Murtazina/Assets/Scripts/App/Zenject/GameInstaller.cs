@@ -1,6 +1,4 @@
-using CatJam.PauseMenu;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace CatJam

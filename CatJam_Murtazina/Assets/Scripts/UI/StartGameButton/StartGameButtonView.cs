@@ -5,7 +5,7 @@ using Zenject;
 using Models.MainMenu;
 using UnityEngine.EventSystems;
 
-namespace UI.StartGameButton
+namespace CatJam
 {
     [RequireComponent(typeof(Button))]
     public class StartGameButtonView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler

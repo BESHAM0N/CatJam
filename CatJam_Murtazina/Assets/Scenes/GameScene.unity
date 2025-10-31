@@ -857,6 +857,7 @@ GameObject:
   - component: {fileID: 625127572}
   - component: {fileID: 625127574}
   - component: {fileID: 625127573}
+  - component: {fileID: 625127575}
   m_Layer: 0
   m_Name: WitchCat
   m_TagString: Untagged
@@ -921,6 +922,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625127571}
   m_CullTransparentMesh: 1
+--- !u!95 &625127575
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625127571}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4a4b93de9973394b9dec146fe63ab3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &643799725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,7 +2681,7 @@ MonoBehaviour:
   _gameOverScreen: {fileID: 867777750}
   _world: {fileID: 1568413558}
   _score: {fileID: 1639639853}
-  _timerText: {fileID: 1776898816}
+  _timerText: {fileID: 1776898819}
   _gameOverScoreText: {fileID: 1084810047}
   _pauseButton: {fileID: 1885268152}
 --- !u!114 &1610766320
@@ -2675,7 +2697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entitiesView: {fileID: 597294600}
-  _timer: {fileID: 1776898818}
+  _timer: {fileID: 1776898819}
   _view: {fileID: 561209366}
 --- !u!82 &1610766321
 AudioSource:
@@ -2966,6 +2988,7 @@ GameObject:
   - component: {fileID: 1776898817}
   - component: {fileID: 1776898816}
   - component: {fileID: 1776898818}
+  - component: {fileID: 1776898819}
   m_Layer: 0
   m_Name: TimerText
   m_TagString: Untagged
@@ -3098,9 +3121,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1776898814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b8e85d443d0904284344c2675c8801, type: 3}
+  m_Script: {fileID: 11500000, guid: 037278d7fc61452ca2e065834d77a94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1776898819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776898814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c352e792d4fd4807a5c8b75a3c305aa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timerText: {fileID: 1776898816}
+  _scale: 1.15
+  _duration: 0.5
+  _pulseColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1885268150
 GameObject:
   m_ObjectHideFlags: 0

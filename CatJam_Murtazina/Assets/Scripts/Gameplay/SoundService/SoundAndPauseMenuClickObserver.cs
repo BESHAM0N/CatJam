@@ -1,5 +1,5 @@
 ﻿using System;
-using CatJam.PauseMenu;
+using CatJam;
 using Zenject;
 
 namespace CatJam
