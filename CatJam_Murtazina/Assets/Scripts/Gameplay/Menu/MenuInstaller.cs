@@ -11,17 +11,13 @@ namespace CatJam.Menu
 
         public override void InstallBindings()
         {
-            // Настройки
             Container.BindInstance(new SceneLoadSettings(_gameSceneName)).AsSingle();
-
-            // Сервис загрузки
+           
             Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
-
-            // Сигналы
+          
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<StartGameSignal>();
-
-            // Подписчик на сигнал
+          
             Container.BindInterfacesAndSelfTo<StartGameFlow>().AsSingle().NonLazy();
         }
     }

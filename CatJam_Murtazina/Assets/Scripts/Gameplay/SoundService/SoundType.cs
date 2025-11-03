@@ -6,7 +6,6 @@
         ButtonClick,
         CatClickTrue,
         CatClickFalse,
-        Victory,
         Defeat
     }
 }
