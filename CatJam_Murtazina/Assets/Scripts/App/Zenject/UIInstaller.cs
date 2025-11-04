@@ -17,6 +17,7 @@ namespace CatJam
             TimerInstaller.Install(Container, _timer);
             PauseMenuInstaller.Install(Container, _view);
             Container.BindInterfacesAndSelfTo<PauseGameObserver>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<GameOverObserver>().AsSingle().NonLazy();
         }
     }
 }

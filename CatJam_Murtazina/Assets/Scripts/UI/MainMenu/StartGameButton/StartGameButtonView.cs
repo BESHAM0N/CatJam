@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 using Models.MainMenu;
+using TMPro;
 using UnityEngine.EventSystems;
 
 namespace CatJam
@@ -13,6 +14,8 @@ namespace CatJam
         [SerializeField] private Button _button;
         [SerializeField] private float _hoverScale  = 1.1f;
         [SerializeField] private float _hoverDuration  = 0.2f;
+
+        [SerializeField] private TextMeshProUGUI _startText;
 
         private SignalBus _signalBus;
         private Vector3 _originalScale;
@@ -36,6 +39,11 @@ namespace CatJam
             
             _originalScale = _button.transform.localScale;
             _button.onClick.AddListener(OnClick);
+        }
+
+        public void SetStartText(string text)
+        {
+            _startText.text = $"{text}, let's go, meow";
         }
 
         private void OnDestroy()
