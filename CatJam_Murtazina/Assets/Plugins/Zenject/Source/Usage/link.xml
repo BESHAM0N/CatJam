@@ -1,3 +1,22 @@
 <linker>
     <assembly fullname="Zenject-usage" preserve="all"/>
+    <assembly fullname="Assembly-CSharp">
+        <!-- Инсталлеры -->
+        <type fullname="CatJam.ProjectInstaller" preserve="all"/>
+        <type fullname="CatJam.LeaderboardInstaller" preserve="all"/>
+
+        <!-- Интерфейс и реализация лидерборда -->
+        <type fullname="CatJam.ILeaderboard" preserve="all"/>
+        <type fullname="CatJam.Leaderboard" preserve="all"/>
+
+        <!-- Вьюха, чтобы событие/делегаты не вычистило -->
+        <type fullname="UI.MainMenu.Leaderboard.LeaderboardView" preserve="all"/>
+
+        <!-- Классы плагина Dan -->
+        <type fullname="Dan.Main.LeaderboardCreator" preserve="all"/>
+        <type fullname="Dan.Main.LeaderboardCreatorBehaviour" preserve="all"/>
+        <type fullname="Dan.Main.LeaderboardCreatorConfig" preserve="all"/>
+        <type fullname="Dan.Models.Entry" preserve="all"/>
+        <type fullname="Dan.Models.LeaderboardSearchQuery" preserve="all"/>
+    </assembly>
 </linker>
