@@ -259,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &462988592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2407,6 +2407,7 @@ MonoBehaviour:
   _leaderboardContent: {fileID: 1865290477}
   _startGameButtonView: {fileID: 696859579}
   _leaderboardNameInputField: {fileID: 1618969666}
+  _currentScoreText: {fileID: 0}
   _enterNameButton: {fileID: 391338403}
   _rowPrefab: {fileID: 3674455721877048650, guid: 3c42c88037e52c44184db0f29edfb5e8, type: 3}
   _warningText: {fileID: 0}
