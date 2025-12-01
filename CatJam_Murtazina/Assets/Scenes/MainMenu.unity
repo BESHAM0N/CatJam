@@ -1352,7 +1352,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: let's go, meow
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 15f0fca9baa950348a54d1b5a41ec214, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a35dd8a5953c9e448b134cac7c698b41, type: 2}
   m_sharedMaterial: {fileID: 7037260587539401777, guid: 15f0fca9baa950348a54d1b5a41ec214, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1416,7 +1416,7 @@ MonoBehaviour:
   m_margin: {x: 24, y: 24, z: 24, w: 24}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1424313803
