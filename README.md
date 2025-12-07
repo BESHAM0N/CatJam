@@ -1,5 +1,7 @@
 🐾 CatJam — a Fast-Paced Reaction Timer Game
 
+![Gameplay](CatJam_Murtazina/Assets/Sprites/Gif/gameplay.gif)
+
 CatJam is a small arcade-style reaction game made as a pet project.
 Your goal is to free kittens from their cages by tapping the correct tiles before the timer runs out.
 Each correct tap adds extra time, but a mistake drains the timer heavily and may instantly lead to defeat.
@@ -22,9 +24,6 @@ The real challenge is to keep the timer alive and push your score as high as pos
 
 🎨 Hand-drawn cozy art style with forests, stars, and a magical cat guide.
 
-🎮 Gameplay
-![Gameplay](CatJam_Murtazina/Assets/Sprites/Gif/gameplay.gif)
-
 🧠 How to Play
 Tap only the tiles that contain a kitten.
 
@@ -40,5 +39,5 @@ Survive as long as you can and set a new high score!
 🏆 Leaderboard
 The leaderboard is presented by a magical cat mentor who comments and encourages the player.
 After the game ends, players enter their nickname through an animated input bubble:
-<div align="center"> <img width="800" height="1079" alt="Снимок экрана 2025-12-07 192848" src="https://github.com/user-attachments/assets/c0102ceb-c6b5-4fd0-8f69-adada66ed1e0" /></div>
+<div align="center"> <img width="600" height="1079" alt="Снимок экрана 2025-12-07 192848" src="https://github.com/user-attachments/assets/c0102ceb-c6b5-4fd0-8f69-adada66ed1e0" /></div>
 
