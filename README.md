@@ -23,7 +23,7 @@ The real challenge is to keep the timer alive and push your score as high as pos
 🎨 Hand-drawn cozy art style with forests, stars, and a magical cat guide.
 
 🎮 Gameplay
-![Gameplay](CatJam_Murtazina/Assets/Sprites/Gif/2025-12-07 19-24-33.gif)
+![Gameplay](CatJam_Murtazina/Assets/Sprites/Gif/gameplay.gif)
 
 🧠 How to Play
 Tap only the tiles that contain a kitten.
