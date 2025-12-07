@@ -1,5 +1,5 @@
 🐾 CatJam — a Fast-Paced Reaction Timer Game
-<div align="center"><img width="448" height="1536" alt="ChatGPT Image 28 окт  2025 г , 22_31_34" src="https://github.com/user-attachments/assets/fcc4a132-decd-4da7-b812-3129a80f7c3d" /> </div>
+<div align="center"><img width="212" height="1536" alt="ChatGPT Image 28 окт  2025 г , 22_31_34" src="https://github.com/user-attachments/assets/fcc4a132-decd-4da7-b812-3129a80f7c3d" /> </div>
 
 CatJam is a small arcade-style reaction game made as a pet project.
 Your goal is to free kittens from their cages by tapping the correct tiles before the timer runs out.
@@ -24,7 +24,7 @@ The real challenge is to keep the timer alive and push your score as high as pos
 🎨 Hand-drawn cozy art style with forests, stars, and a magical cat guide.
 
 🎮 Gameplay
-
+![Gameplay](Assets/Sprites/Gif/gameplay.gif)
 
 🧠 How to Play
 
@@ -48,5 +48,5 @@ Survive as long as you can and set a new high score!
 
 The leaderboard is presented by a magical cat mentor who comments and encourages the player.
 After the game ends, players enter their nickname through an animated input bubble:
-<div align="center"> <img width="600" height="1079" alt="Снимок экрана 2025-12-07 192848" src="https://github.com/user-attachments/assets/c0102ceb-c6b5-4fd0-8f69-adada66ed1e0" /></div>
+<div align="center"> <img width="800" height="1079" alt="Снимок экрана 2025-12-07 192848" src="https://github.com/user-attachments/assets/c0102ceb-c6b5-4fd0-8f69-adada66ed1e0" /></div>
 
