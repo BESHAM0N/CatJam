@@ -1,6 +1,6 @@
 🐾 CatJam — a Fast-Paced Reaction Timer Game
 <div align="center">
-  <img src="CatJam_Murtazina/Assets/Sprites/Gif/gameplay.gif" width="400"/>
+  <img src="CatJam_Murtazina/Assets/Sprites/Gif/gameplay.gif" width="800"/>
 </div>
 
 CatJam is a small arcade-style reaction game made as a pet project.
