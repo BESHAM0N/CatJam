@@ -1,4 +1,4 @@
-🐾 CatJam — a Fast-Paced Reaction Timer Game <div align="center"><img width="212" height="1536" alt="ChatGPT Image 28 окт  2025 г , 22_31_34" src="https://github.com/user-attachments/assets/fcc4a132-decd-4da7-b812-3129a80f7c3d" /> </div>
+🐾 CatJam — a Fast-Paced Reaction Timer Game
 
 CatJam is a small arcade-style reaction game made as a pet project.
 Your goal is to free kittens from their cages by tapping the correct tiles before the timer runs out.
