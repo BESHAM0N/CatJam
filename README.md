@@ -1,4 +1,5 @@
-🐾 CatJam — a Fast-Paced Reaction Timer Game
+<b>🐾 CatJam — a Fast-Paced Reaction Timer Game</b>
+---
 <div align="center">
   <img src="CatJam_Murtazina/Assets/Sprites/Gif/gameplay.gif" width="800"/>
 </div>
@@ -9,8 +10,8 @@ Each correct tap adds extra time, but a mistake drains the timer heavily and may
 
 The real challenge is to keep the timer alive and push your score as high as possible.
 
-🌟 Features
-
+<b>🌟 Features</b>
+---
 ⏳ Dynamic countdown timer that constantly decreases.
 
 🐈 Cute kitten animations and responsive visual feedback.
@@ -25,7 +26,8 @@ The real challenge is to keep the timer alive and push your score as high as pos
 
 🎨 Hand-drawn cozy art style with forests, stars, and a magical cat guide.
 
-🧠 How to Play
+<b>🧠 How to Play</b>
+---
 Tap only the tiles that contain a kitten.
 
 Every correct tap:
@@ -37,7 +39,8 @@ drastically reduces the timer
 reaching zero means game over
 Survive as long as you can and set a new high score!
 
-🏆 Leaderboard
+<b>🏆 Leaderboard</b>
+---
 The leaderboard is presented by a magical cat mentor who comments and encourages the player.
 After the game ends, players enter their nickname through an animated input bubble:
 <div align="center"> <img width="600" height="1079" alt="Снимок экрана 2025-12-07 192848" src="https://github.com/user-attachments/assets/c0102ceb-c6b5-4fd0-8f69-adada66ed1e0" /></div>
